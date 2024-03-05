@@ -1,5 +1,4 @@
 import React from "react"
-// import { ArtistCard, ArtistTile, CardImg, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap"
 import { NavLink } from "react-router-dom" 
 
 const ArtistProtectedIndex = ({ currentUser, apartments }) => {

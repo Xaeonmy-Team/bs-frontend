@@ -8,11 +8,9 @@ import NotFound from './pages/NotFound';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Splash from './pages/Splash';
-import cats from './mockArtists';
 import ArtistProtextedIndex from './pages/ArtistProtectedIndex';
 
 const App = () => {
-  console.log(cats)
   return (
     <>
     <Header />

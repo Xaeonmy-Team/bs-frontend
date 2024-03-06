@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const ArtistIndex = () => {
+const SignUp = () => {
   return (
-    <div>
-      
-    </div>
+  <div>
+    SignUp page to be utilized
+  </div>
   )
 }
 
-export default ArtistIndex
+export default SignUp;

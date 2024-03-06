@@ -8,7 +8,8 @@ import NotFound from './pages/NotFound';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Splash from './pages/Splash';
-import cats from './mockArtists'
+import cats from './mockArtists';
+import ArtistProtextedIndex from './pages/ArtistProtectedIndex';
 
 const App = () => {
   console.log(cats)
@@ -17,12 +18,11 @@ const App = () => {
     <Header />
     <Routes>
       <Route  path="/Home" element={<ArtistIndex/>} />
-      <Route  path="/*" element={<NotFound/>} />
       <Route  path="/signin" element={<SignIn/>} />
       <Route  path="/signup" element={<SignUp/>} />
       <Route  path="/" element={<Splash/>} />
-      <Route  path="/" element={<ArtistProtextedIndex />} />
-      <Route  path="ArtistTile" element={< ArtistProtextedIndex /> } />
+      <Route  path="/API" element={< ArtistProtextedIndex /> } />
+      <Route  path="/*" element={<NotFound/>} />
     </Routes>
     <Footer />
     </>

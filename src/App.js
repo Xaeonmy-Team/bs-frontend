@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ArtistIndex from './pages/ArtistIndex';
+import NotFound from './pages/NotFound';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Splash from './pages/Splash';
+import cats from './mockArtists';
+import ArtistProtextedIndex from './pages/ArtistProtectedIndex';
 
-function App() {
+const App = () => {
+  console.log(cats)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Header />
+    <Routes>
+      <Route  path="/Home" element={<ArtistIndex/>} />
+      <Route  path="/signin" element={<SignIn/>} />
+      <Route  path="/signup" element={<SignUp/>} />
+      <Route  path="/" element={<Splash/>} />
+      <Route  path="/API" element={< ArtistProtextedIndex /> } />
+      <Route  path="/*" element={<NotFound/>} />
+    </Routes>
+    <Footer />
+    </>
+  )
 }
 
 export default App;

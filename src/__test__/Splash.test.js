@@ -1,14 +1,14 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter for testing with Router
+import { BrowserRouter } from 'react-router-dom'; 
 import SignUpInital from './SignUpInital';
 
 test('renders all elements and checks functionality', () => {
   
   render(
-    <Router>
+    <BrowserRouter>
       <SignUpInital />
-    </Router>
+    </BrowserRouter>
   )
 
   

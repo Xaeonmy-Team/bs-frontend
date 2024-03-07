@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = () => {
+const FooterNon = () => {
   return (
     <footer className="footer">
       <p> About | &copy; 2024 BeatSync. | Contact</p>
@@ -8,4 +8,4 @@ const Footer = () => {
   )
 }
 
-export default Footer;
+export default FooterNon

@@ -4,8 +4,9 @@ import { NavLink, useNavigate } from "react-router-dom"
 
 const Header = ({currentUser}) => {
   const navigate = useNavigate()
-  const handleClick = () => {
-    navigate ("/")
+  const handleLogout = () => {
+    localStorage.removeItem("userToken")
+    navigate ("/", {  replace: true })
   }
   return (
 
@@ -25,7 +26,7 @@ const Header = ({currentUser}) => {
           </NavLink>
         </NavItem>
             <NavItem>
-              <NavLink onClick={handleClick}>
+              <NavLink to="/" onClick={handleLogout} className="nav-link">
                 | Log Out
               </NavLink>
             </NavItem>
@@ -44,7 +45,7 @@ const Header = ({currentUser}) => {
           </NavLink>
         </NavItem>
             <NavItem>
-              <NavLink onClick={handleClick} className="nav-link">
+              <NavLink to="/" onClick={handleLogout} className="nav-link">
                 | Log Out
               </NavLink>
             </NavItem>

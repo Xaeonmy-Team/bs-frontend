@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import { Form, FormGroup, Input, Button } from "reactstrap";
 import { useNavigate } from 'react-router-dom';
 
-const SignUpInital = () => {
+const SignUpInitial = () => {
   const [email, setEmail] = useState("")
   const navigate = useNavigate()
 
@@ -42,4 +42,4 @@ const SignUpInital = () => {
   )
 }
 
-export default SignUpInital
+export default SignUpInitial

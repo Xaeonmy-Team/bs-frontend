@@ -13,28 +13,7 @@ const Header = ({currentUser}) => {
     <header className= "header">
       <h2>
     <Nav>
-        {currentUser && (
-          <>
-        <NavItem>
-        <NavLink to="/ArtistprotectedIndex" className="nav-link">
-               <p>SYNC |</p> 
-              </NavLink>
-            </NavItem>
-            <NavItem>
-          <NavLink to="/Home" >
-             Home 
-          </NavLink>
-        </NavItem>
-            <NavItem>
-              <NavLink to="/" onClick={handleLogout} className="nav-link">
-                | Log Out
-              </NavLink>
-            </NavItem>
-          </>
-        )}
-        {!currentUser && (
-          <>
-        <NavItem >
+      <NavItem >
         <NavLink to="/ArtistProtectedIndex" className="nav-link">
         SYNC |
               </NavLink>
@@ -49,8 +28,6 @@ const Header = ({currentUser}) => {
                 | Log Out
               </NavLink>
             </NavItem>
-          </>
-        )}
       </Nav>
       </h2>
     </header>

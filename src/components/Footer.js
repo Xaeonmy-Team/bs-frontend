@@ -12,7 +12,6 @@ const Footer = ({ currentUser }) => {
   return (
     <footer className="footer">
       <Nav>
-          <>
             <NavItem>
               <NavLink to="/About" className="nav-link">
                 About 
@@ -28,7 +27,6 @@ const Footer = ({ currentUser }) => {
                  Contact
               </NavLink>
             </NavItem>
-          </>
       </Nav>
     </footer>
   )

@@ -1,6 +1,6 @@
 import React from "react"
 import { useNavigate, NavLink } from 'react-router-dom'
-import { Nav, NavItem } from 'reactstrap' // Assuming you're using reactstrap
+import { Nav, NavItem } from 'reactstrap' 
 
 const Footer = ({ currentUser }) => {
   const navigate = useNavigate()

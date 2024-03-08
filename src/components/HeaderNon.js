@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header = () => {
+const HeaderNon = () => {
   return (
     <header className="header-nav">
       <h1>Sync | Home | Logout </h1>
@@ -8,4 +8,4 @@ const Header = () => {
   )
 }
 
-export default Header;
+export default HeaderNon;

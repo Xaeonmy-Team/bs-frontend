@@ -20,8 +20,8 @@ const App = () => {
       <Route  path="/" element={<Splash/>} />
       <Route  path="/API" element={< ArtistProtextedIndex /> } />
       <Route  path="/*" element={<NotFound/>} />
-      <Routes path="/About" element={<About/>} />
-      <Routes path="/Contact" element={<Contact/>} />
+      <Route path="/About" element={<About/>} />
+      <Route path="/Contact" element={<Contact/>} />
     </Routes>
     
     </>

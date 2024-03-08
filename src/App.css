@@ -1,21 +1,25 @@
 .footer {
 	background-color: var(--footer-background-color);
-	border-top: 2px solid #1A0462;
+	border-top: 2px solid #8f7802;
 	bottom: 0;
-	left: 0;
 	padding: 1rem;
-	position: fixed;
 	text-align: center;
 	width: 100%;
 }
 
-.header-nav {
-	text-align: center;
-	background-color: #E6E6FA;
-	border-bottom: 2px solid #1A0462;
-	justify-content: space-between;
-	padding: 1rem 2rem;
+.header {
+	background-color: var(--header-background-color);
+	border-bottom: 2px solid #8f7802;
+	padding: 1rem;
+	top: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	color: white;
+	text-decoration: none;
+	
 }
+
 
 .not-found {
 	align-items: center;

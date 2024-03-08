@@ -2,6 +2,7 @@ import React from 'react'
 import ArtistTile from '../components/ArtistTile.js'
 import artists from '../mockArtists.js'
 import Header from '../components/Header';
+import Footer from '../components/Footer'
 
 
 const ArtistIndex = () => {
@@ -16,6 +17,7 @@ const ArtistIndex = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

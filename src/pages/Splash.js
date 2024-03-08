@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import HeaderNon from '../components/HeaderNon';
-import FooterNon from '../components/FooterNon';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { Form, FormGroup, Input, Button } from "reactstrap";
 import { useNavigate } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ const SignUpInital = () => {
 
   return (
     <div>
-      <HeaderNon />
+      <Header />
       <Button onClick={handleSignIn}>Sign In</Button>
       <Form>
         <FormGroup>
@@ -37,7 +37,7 @@ const SignUpInital = () => {
         </FormGroup>
       </Form>
       <Button onClick={handleSubmit}>Submit</Button>
-      <FooterNon />
+      <Footer />
     </div>
   )
 }

@@ -8,16 +8,15 @@ const SignUp = () => {
     email: location.state ? location.state.email : "",
     password: "",
     con_password: ""
-  });
-  const navigate = useNavigate();
+  })
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
-    setSignUpFormData({ ...signUpFormData, [e.target.name]: e.target.value });
+    setSignUpFormData({ ...signUpFormData, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = () => {
-    // createUser(signUpFormData) - saving for later to define a method
-    navigate("/Home");
+    navigate("/Home")
   }
 
   return (
@@ -59,7 +58,7 @@ const SignUp = () => {
         <Button onClick={handleSubmit}>Submit</Button>
       </Form>
     </>
-  );
+  )
 }
 
 export default SignUp;

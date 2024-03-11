@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import { Form, FormGroup, Input, Button } from "reactstrap"
 import { useNavigate } from "react-router-dom"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
 
 const SignIn = () => {
   const [signInData, setSignInData] = useState({
@@ -38,8 +36,8 @@ const SignIn = () => {
 
   return (
     <div>
-      <Header></Header>
-      <h3>Sign In</h3>
+      
+      
       <Form>
         <FormGroup>
           <Input
@@ -63,7 +61,7 @@ const SignIn = () => {
         </FormGroup>
         <Button onClick={handleSubmit}>Sign In</Button>
       </Form>
-      <Footer></Footer>
+      
     </div>
   )
 }

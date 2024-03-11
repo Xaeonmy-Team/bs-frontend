@@ -1,10 +1,10 @@
-import React from "react"
-import { useNavigate, NavLink } from 'react-router-dom'
-import { Nav, NavItem } from 'reactstrap' 
+import React from "react";
+import { Nav, NavItem } from "reactstrap";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Footer = ({ currentUser }) => {
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   const handleClick = () => {
     navigate("/")
   }
@@ -12,21 +12,19 @@ const Footer = ({ currentUser }) => {
   return (
     <footer className="footer">
       <Nav>
-            <NavItem>
-              <NavLink to="/About" className="nav-link">
-                About 
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink>
-                |&copy; 2024 BeatSync.|
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="/Contact" onClick={handleClick}>
-                 Contact
-              </NavLink>
-            </NavItem>
+        <NavItem>
+          <NavLink to="/About" className="nav-link">
+            About
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink>|&copy; 2024 BeatSync.|</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/Contact" onClick={handleClick} className="nav-link">
+            Contact
+          </NavLink>
+        </NavItem>
       </Nav>
     </footer>
   )

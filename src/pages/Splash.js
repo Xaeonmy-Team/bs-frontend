@@ -5,19 +5,19 @@ import { Form, FormGroup, Input, Button } from "reactstrap";
 import { useNavigate } from 'react-router-dom';
 
 const SignUpInitial = () => {
-  const [email, setEmail] = useState("")
-  const navigate = useNavigate()
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setEmail(e.target.value)
+    setEmail(e.target.value);
   }
 
   const handleSubmit = () => {
-    navigate("/SignUp", { state: { email } })
+    navigate("/SignUp", { state: { email } });
   }
 
   const handleSignIn = () => {
-    navigate("/SignIn")
+    navigate("/SignIn");
   }
 
   return (
@@ -39,7 +39,7 @@ const SignUpInitial = () => {
       <Button onClick={handleSubmit}>Submit</Button>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default SignUpInitial
+export default SignUpInitial;

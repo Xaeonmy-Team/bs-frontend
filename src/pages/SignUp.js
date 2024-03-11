@@ -1,36 +1,39 @@
-import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Form, FormGroup, Input, Button } from "reactstrap";
-
+import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Form, FormGroup, Input, Button } from 'reactstrap';
 
 const SignUp = () => {
   const location = useLocation();
   const [signUpFormData, setSignUpFormData] = useState({
-    email: location.state ? location.state.email : "",
-    password: "",
-    con_password: ""
+    email: location.state ? location.state.email : '',
+    password: '',
+    con_password: '',
   })
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setSignUpFormData({ ...signUpFormData, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = () => {
-    navigate("/Home")
+    if (signUpFormData.password !== signUpFormData.con_password) {
+      alert('Password and Confirm Password do not match')
+      return
+    }
+    navigate('/Home')
   }
 
   return (
-    <div>
+    <>
       <h3>Please Confirm Email and Password</h3>
       <br></br>
       <Form>
         <FormGroup>
           <Input
-            id="email"
-            name="email"
-            placeholder="Type your email"
-            type="text"
+            id='email'
+            name='email'
+            placeholder='Type your email'
+            type='password'
             value={signUpFormData.email}
             onChange={handleChange}
           />
@@ -38,28 +41,28 @@ const SignUp = () => {
         <br></br>
         <FormGroup>
           <Input
-            id="password"
-            name="password"
-            placeholder="Type your password"
-            type="text"
+            id='password'
+            name='password'
+            placeholder='Type your password'
+            type='password'
             onChange={handleChange}
           />
         </FormGroup>
         <br></br>
         <FormGroup>
           <Input
-            id="con_password"
-            name="con_password"
-            placeholder="Confirm your password"
-            type="text"
+            id='con_password'
+            name='con_password'
+            placeholder='Confirm your password'
+            type='password'
             onChange={handleChange}
           />
         </FormGroup>
         <br></br>
         <Button onClick={handleSubmit}>Submit</Button>
       </Form>
-    </div>
+    </>
   )
 }
 
-export default SignUp;
+export default SignUp

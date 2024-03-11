@@ -2,7 +2,7 @@ import React from "react"
 import { Nav, NavItem } from "reactstrap"
 import { NavLink, useNavigate } from "react-router-dom"
 
-const Header = ({currentUser}) => {
+const Header = ({currentUser, logout}) => {
   const navigate = useNavigate()
   const handleLogout = () => {
     localStorage.removeItem("userToken")

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Form, FormGroup, Input, Button } from 'reactstrap';
 
-const SignUp = () => {
-  const location = useLocation();
+const SignUp = (SignUp) => {
+  const location = useLocation()
   const [signUpFormData, setSignUpFormData] = useState({
     email: location.state ? location.state.email : '',
     password: '',
@@ -15,12 +15,26 @@ const SignUp = () => {
     setSignUpFormData({ ...signUpFormData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = () => {
-    if (signUpFormData.password !== signUpFormData.con_password) {
-      alert('Password and Confirm Password do not match')
-      return
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const formData = new FormData(formRef.current)
+    const data = Object.fromEntries(formData)
+    const userInfo = {
+      user: {
+        email: data.email,
+        password: data.password,
+        password_confirmation: data.password_confirmation,
+      },
     }
-    navigate('/Home')
+    SignUp(userInfo)
+    navigate("/SignIn")
+    e.target.reset()
+  
+  //   if (signUpFormData.password !== signUpFormData.con_password) {
+  //     alert('Password and Confirm Password do not match')
+  //     return
+  //   }
+  //   navigate('/Home')
   }
 
   return (
@@ -63,6 +77,6 @@ const SignUp = () => {
       </Form>
     </>
   )
-}
+  }
 
 export default SignUp

@@ -12,13 +12,18 @@ import Contact from  './pages/Contact';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+
+
+
 const App = () => {
+
+  
   return (
     <div className='body'>
     <Header></Header>
     <Routes>
       <Route  path="/Home" element={<ArtistIndex/>} />
-      <Route  path="/signin" element={<SignIn/>} />
+      <Route  path="/signin" element={<SignIn SignIn={SignIn}/>} />
       <Route  path="/signup" element={<SignUp/>} />
       <Route  path="/" element={<Splash/>} />
       <Route  path="/ArtistProtectedIndex" element={< ArtistProtextedIndex /> } />

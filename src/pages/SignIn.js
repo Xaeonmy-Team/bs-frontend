@@ -1,15 +1,18 @@
 import React, { useState } from "react"
 import { Form, FormGroup, Input, Button } from "reactstrap"
 import { useNavigate } from "react-router-dom"
+
 const SignIn = () => {
   const [signInData, setSignInData] = useState({
     email: "",
     password: ""
   })
   const navigate = useNavigate()
+
   const handleChange = (e) => {
     setSignInData({ ...signInData, [e.target.name]: e.target.value })
   }
+
   const handleSubmit = async () => {
     try {
       const response = await fetch("/api/signin", {
@@ -28,8 +31,11 @@ const SignIn = () => {
       console.error("Error during sign-in:", error)
     }
   }
+
   return (
     <div>
+      
+      
       <Form>
         <FormGroup>
           <Input
@@ -53,7 +59,9 @@ const SignIn = () => {
         </FormGroup>
         <Button onClick={handleSubmit}>Sign In</Button>
       </Form>
+      
     </div>
   )
 }
+
 export default SignIn

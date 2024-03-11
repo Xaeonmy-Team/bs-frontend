@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import { Form, FormGroup, Input, Button } from "reactstrap";
 import { useNavigate } from 'react-router-dom';
 
@@ -22,7 +20,6 @@ const SignUpInitial = () => {
 
   return (
     <div>
-      <Header />
       <Button onClick={handleSignIn}>Sign In</Button>
       <Form>
         <FormGroup>
@@ -37,7 +34,6 @@ const SignUpInitial = () => {
         </FormGroup>
       </Form>
       <Button onClick={handleSubmit}>Submit</Button>
-      <Footer />
     </div>
   )
 }

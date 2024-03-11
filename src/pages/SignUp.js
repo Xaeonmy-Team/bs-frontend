@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Form, FormGroup, Input, Button } from "reactstrap";
 
+
 const SignUp = () => {
   const location = useLocation();
   const [signUpFormData, setSignUpFormData] = useState({
@@ -20,7 +21,7 @@ const SignUp = () => {
   }
 
   return (
-    <>
+    <div>
       <h3>Please Confirm Email and Password</h3>
       <br></br>
       <Form>
@@ -57,7 +58,7 @@ const SignUp = () => {
         <br></br>
         <Button onClick={handleSubmit}>Submit</Button>
       </Form>
-    </>
+    </div>
   )
 }
 

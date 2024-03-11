@@ -1,11 +1,10 @@
 import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+
 
 const About = () => {
   return (
     <div>
-      <Header />
+      
       <h1>About Us</h1>
       <p>Welcome to BeatSync, where the beats keep flowing. Born out of a passion for connecting artists with their audiences, we've created a platform dedicated to showcasing the diverse and vibrant world of music.</p>
       <h2>Our Mission</h2>
@@ -18,7 +17,7 @@ const About = () => {
       <p>Whether you're here to discover new tunes or get front row tickets to the hottest shows, we invite you to join us on this musical journey. Together, let's amplify the rhythm of creativity and make BeatSynce a vibrant community where music truly lives.
 
       Thank you for being a part of our story. - The Beat Sync Team</p>
-      <Footer />
+      
     </div>
   )
 }

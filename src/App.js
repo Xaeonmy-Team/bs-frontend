@@ -9,10 +9,13 @@ import Splash from './pages/Splash';
 import ArtistProtextedIndex from './pages/ArtistProtectedIndex';
 import About from './pages/About';
 import Contact from  './pages/Contact';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
     <>
+    <Header></Header>
     <Routes>
       <Route  path="/Home" element={<ArtistIndex/>} />
       <Route  path="/signin" element={<SignIn/>} />
@@ -23,7 +26,7 @@ const App = () => {
       <Route path="/About" element={<About/>} />
       <Route path="/Contact" element={<Contact/>} />
     </Routes>
-    
+    <Footer></Footer>
     </>
   )
 }

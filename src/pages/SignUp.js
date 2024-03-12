@@ -1,82 +1,42 @@
-import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { Form, FormGroup, Input, Button } from 'reactstrap';
+import React from 'react'
+import { useRef } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 
-const SignUp = (SignUp) => {
-  const location = useLocation()
-  const [signUpFormData, setSignUpFormData] = useState({
-    email: location.state ? location.state.email : '',
-    password: '',
-    con_password: '',
-  })
-  const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    setSignUpFormData({ ...signUpFormData, [e.target.name]: e.target.value })
-  }
+const SignUp = ({signUp, currentUserEmail}) => {
+  const formRef = useRef()
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
     const userInfo = {
-      user: {
-        email: data.email,
+      "user": {
+        email: currentUserEmail,
         password: data.password,
-        password_confirmation: data.password_confirmation,
-      },
+        password_confirmation: data.password_confirmation
+      }
     }
-    SignUp(userInfo)
-    navigate("/SignIn")
+    signUp(userInfo)
+    navigate("/")
     e.target.reset()
-  
-  //   if (signUpFormData.password !== signUpFormData.con_password) {
-  //     alert('Password and Confirm Password do not match')
-  //     return
-  //   }
-  //   navigate('/Home')
   }
 
   return (
-    <>
-      <h3>Please Confirm Email and Password</h3>
-      <br></br>
-      <Form>
-        <FormGroup>
-          <Input
-            id='email'
-            name='email'
-            placeholder='Type your email'
-            type='password'
-            value={signUpFormData.email}
-            onChange={handleChange}
-          />
-        </FormGroup>
-        <br></br>
-        <FormGroup>
-          <Input
-            id='password'
-            name='password'
-            placeholder='Type your password'
-            type='password'
-            onChange={handleChange}
-          />
-        </FormGroup>
-        <br></br>
-        <FormGroup>
-          <Input
-            id='con_password'
-            name='con_password'
-            placeholder='Confirm your password'
-            type='password'
-            onChange={handleChange}
-          />
-        </FormGroup>
-        <br></br>
-        <Button onClick={handleSubmit}>Submit</Button>
-      </Form>
-    </>
+    <div>
+      <form ref={formRef} onSubmit={handleSubmit}>
+        Password: <input type='password' name='password' placeholder='password' />
+        <br />
+        Confirm Password: <input type='password' name='password_confirmation' placeholder='confirm password' />
+        <br />
+        <input type='submit' value='submit'/>
+      </form>
+      <br />
+      <div>
+        Already registered? <NavLink to="/signin">Sign In</NavLink> here.
+      </div>
+    </div>
   )
-  }
+}
 
 export default SignUp

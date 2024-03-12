@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form, FormGroup, Input, Button } from 'reactstrap'
 import { useNavigate } from 'react-router-dom'
 
-const SignUpInitial = () => {
+const SignUpInitial = ({getSplashPageEmail}) => {
   const [email, setEmail] = useState('')
   const navigate = useNavigate()
 
@@ -11,6 +11,7 @@ const SignUpInitial = () => {
   }
 
   const handleSubmit = () => {
+    getSplashPageEmail(email)
     navigate('/SignUp', { state: { email } })
   }
 
